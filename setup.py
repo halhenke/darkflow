@@ -14,7 +14,7 @@ if os.name =='nt' :
             sources=["darkflow/cython_utils/nms.pyx"],
             #libraries=["m"] # Unix-like specific
             include_dirs=[numpy.get_include()]
-        ),        
+        ),
         Extension("darkflow.cython_utils.cy_yolo2_findboxes",
             sources=["darkflow/cython_utils/cy_yolo2_findboxes.pyx"],
             #libraries=["m"] # Unix-like specific
@@ -33,7 +33,7 @@ elif os.name =='posix' :
             sources=["darkflow/cython_utils/nms.pyx"],
             libraries=["m"], # Unix-like specific
             include_dirs=[numpy.get_include()]
-        ),        
+        ),
         Extension("darkflow.cython_utils.cy_yolo2_findboxes",
             sources=["darkflow/cython_utils/cy_yolo2_findboxes.pyx"],
             libraries=["m"], # Unix-like specific
@@ -51,7 +51,7 @@ else :
         Extension("darkflow.cython_utils.nms",
             sources=["darkflow/cython_utils/nms.pyx"],
             libraries=["m"] # Unix-like specific
-        ),        
+        ),
         Extension("darkflow.cython_utils.cy_yolo2_findboxes",
             sources=["darkflow/cython_utils/cy_yolo2_findboxes.pyx"],
             libraries=["m"] # Unix-like specific
@@ -69,6 +69,11 @@ setup(
     license='GPLv3',
     url='https://github.com/thtrieu/darkflow',
     packages = find_packages(),
+    install_requires = [
+        "Cython",
+        "tensorflow",
+        "opencv-python"
+    ],
 	scripts = ['flow'],
     ext_modules = cythonize(ext_modules)
 )
