@@ -17,7 +17,8 @@ results/
 backup/
 tfnet/yolo/parse-history.txt
 tfnet/yolo/*.parsed
-*.txt
+# NOTE: We want to commit labels
+# *.txt
 !requirements*.txt
 *.pb
 /profile
@@ -44,3 +45,6 @@ ckpt/*
 
 #pytest cache
 .cache/
+
+#place where I put training data
+train/

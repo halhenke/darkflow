@@ -72,6 +72,7 @@ setup(
     install_requires = [
         "Cython",
         "tensorflow",
+        "numpy",
         "opencv-python"
     ],
 	scripts = ['flow'],
